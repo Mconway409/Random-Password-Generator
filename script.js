@@ -44,7 +44,7 @@ function writePassword(numbers, symbols, lower, upper, length){
   };
 
   for(i=0;i<Object.keys(choices).length;i++){
-    string += (Object.value(choices)[i]) ? selections[Object.keys(choices)[i]] : "";
+    string += (Object.values(choices)[i]) ? selections[Object.keys(choices)[i]] : "";
   }
 
   if(string != "" && length > 0){
@@ -52,11 +52,11 @@ function writePassword(numbers, symbols, lower, upper, length){
       password += string[Math.floor(math.random() * string.length)];
     }
 
-    document.querySelector('writePassword').value = password;
+    document.querySelector('password').value = password;
 
   }
   else {
-    document.querySelector('writePassword').value = "Please choose criteria";
+    document.querySelector('password').value = "Please choose criteria";
 
   }
 }
