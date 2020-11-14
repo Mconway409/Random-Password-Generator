@@ -49,14 +49,14 @@ function writePassword(numbers, symbols, lower, upper, length){
 
   if(string != "" && length > 0){
     for(i=0;i<length;i++){
-      password += string[Math.floor(math.random() * string.length)];
+      password += string[Math.floor(Math.random() * string.length)];
     }
 
-    document.querySelector('password').value = password;
+    document.querySelector('writePassword').value = password;
 
   }
   else {
-    document.querySelector('password').value = "Please choose criteria";
+    document.querySelector('writePassword').value = "Please choose criteria";
 
   }
 }
