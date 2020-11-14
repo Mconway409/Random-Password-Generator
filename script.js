@@ -34,6 +34,9 @@ generateBtn.addEventListener("click", writePassword); {
     (upperBox.checked) && (numberBox.checked) ? upper += number : ' ';
     (upperBox.checked) && (symbolBox.checked) ? upper += symbol : ' ';
     (numberBox.checked) && (symbolBox.checked) ? numberr += symbol : ' ';
+    (lowerBox.checked) && (upperBox.checked) && (numberBox.checked) ? lower += upper += number : ' ';
+    (lowerBox.checked) && (upperBox.checked) && (symbolBox.checked) ? lower += upper += symbol : ' ';
+    (lowerBox.checked) && (upperBox.checked) && (numberBox.checked) && (symbolBox.checked) ? lower += upper += number += symbol : ' ';
 }
 
 /* utilizing the randomization of it all
