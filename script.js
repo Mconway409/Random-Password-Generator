@@ -10,7 +10,7 @@ var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password").value;
   var characters = document.querySelector("#characters").checked
   var lowerBox = document.querySelector("#lower").checked
   var upperBox = document.querySelector("#upper").checked
@@ -18,9 +18,11 @@ function writePassword() {
   var symbolBox = document.querySelector("#symbol").checked
    
     }
-  /* Incorporating this 
-    passwordText.value = password; */
+  
+    passwordText.value = password; 
+for (var i=0; 1 > 8, i <= 128; i++) {
 
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); {
@@ -39,9 +41,10 @@ generateBtn.addEventListener("click", writePassword); {
     (lowerBox.checked) && (upperBox.checked) && (numberBox.checked) && (symbolBox.checked) ? lower += upper += number += symbol : ' ';
 }
 
-/* utilizing the randomization of it all
-function password {
-(Math.floor(Math.random()
+for (var i =0; i <10; i++) {
+  var pswrd = Math.floor(Math.random()) * lower.length)
 }
-return password;
-}  */
+
+function password {
+  
+}  
