@@ -52,11 +52,11 @@ function writePassword(numbers, symbols, lower, upper, length){
       password += string[Math.floor(math.random() * string.length)];
     }
 
-    document.querySelector('passwordText]').value = password;
+    document.querySelector('writePassword').value = password;
 
   }
   else {
-    document.querySelector('passwordText]').value = "Please choose criteria";
+    document.querySelector('writePassword').value = "Please choose criteria";
 
   }
 }
