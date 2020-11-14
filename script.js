@@ -19,20 +19,15 @@ function writePassword() {
   var numberBox = document.querySelector("#numbers").checked
   var symbolBox = document.querySelector("#symbols").checked
 
+  var length = +characters.value;
+  var checkedLower = lower.checked;
+  var checkedUpper = upper.checked;
+  var checkedNumbers = numbers.checked;
+  var checkedSymbols = symbols.checked;
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
-    var length = +characters.value;
-    var checkedLower = lower.checked;
-    var checkedUpper = upper.checked;
-    var checkedNumbers = numbers.checked;
-    var checkedSymbols = symbols.checked;
-
-}
-
-function writePassword(numbers, symbols, lower, upper, length){
+function randomPassword(numbers, symbols, lower, upper, length){
   var string = "";
   var password = "";
 
@@ -59,4 +54,9 @@ function writePassword(numbers, symbols, lower, upper, length){
     document.querySelector('writePassword').value = "Please choose criteria";
 
   }
+
+  // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword); {
+
+}
 }
