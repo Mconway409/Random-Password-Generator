@@ -1,62 +1,66 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var selections = {
-numbers: '0123456789',
-symbols: '!@#$%^&*=_-',
-lower: 'abcdefghijklmnopqrstuvwxyz',
-upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-};
+document.querySelector("#generate").addEventListener("click", writePassword);
 
 
-
-// Write password to the #password input
 function writePassword() {
-  
-  var passwordText = document.querySelector("#password").value;
-  var characters = document.querySelector("#characters").checked
-  var lowerBox = document.querySelector("#lower").checked
-  var upperBox = document.querySelector("#upper").checked
-  var numberBox = document.querySelector("#numbers").checked
-  var symbolBox = document.querySelector("#symbols").checked
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-  var length = +characters.value;
-  var checkedLower = lower.checked;
-  var checkedUpper = upper.checked;
-  var checkedNumbers = numbers.checked;
-  var checkedSymbols = symbols.checked;
+  passwordText.value = password;
 
 }
 
-function randomPassword(numbers, symbols, lower, upper, length){
-  var string = "";
-  var password = "";
+var generateBtn = document.querySelector("#generate");
+var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var symbols = ["!", "@", "#", "$", "$", "%", "%", "%", "%", "%", "%", "^","&", "*", "(", ")", "-", "_", "+", "="];
 
-  var choices = {
-    numbers: numbers,
-    symbols: symbols,
-    lower: lower,
-    upper: upper,
-  };
+var okLower;
+var okUpper;
+var okNumber;
+var okSymbol;
+var Length = "";
 
-  for(i=0;i<Object.keys(choices).length;i++){
-    string += (Object.values(choices)[i]) ? selections[Object.keys(choices)[i]] : "";
-  }
 
-  if(string != "" && length > 0){
-    for(i=0;i<length;i++){
-      password += string[Math.floor(Math.random() * string.length)];
+function generatePassword() {
+    var Length = (prompt("Please choose an amount between 8 and 128 characters"));
+    var okLower = confirm("Should your password include lowercase letters?");
+    var okUpper = confirm("Should your password include uppercase letetrs?");
+    var okNumber = confirm("Should your password include numbers?");
+    var okSymbol = confirm("Should your password include symbols?");
+
+
+    var randomPswrd = []
+
+        if (okLower) {
+            randomPswrd = randomPswrd.concat(lower);
+        }
+
+        if (okUpper) {
+            randomPswrd = randomPswrd.concat(upper);
+        }
+
+        if (okNumber) {
+            randomPswrd = randomPswrd.concat(numbers);
+        }
+
+        if (okSymbol) {
+            randomPswrd = randomPswrd.concat(symbols);
+        }
+  
+
+    var newPswrd = ""
+
+    for (var i = 0; i < Length; i++) {
+        newPswrd = newPswrd + randomPswrd[Math.floor(Math.random() * randomPswrd.length)];
+        console.log(newPswrd) 
     }
 
-    document.querySelector('writePassword').value = password;
-
-  }
-  else {
-    document.querySelector('writePassword').value = "Please choose criteria";
-
-  }
-
-  // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
-
+    return newPswrd;  
 }
-}
+
+
+
+
+
+
