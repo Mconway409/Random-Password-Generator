@@ -24,6 +24,9 @@ var Length = "";
 
 function generatePassword() {
     var Length = (prompt("Please choose an amount between 8 and 128 characters"));
+     if (enter < 8 || enter > 128) {
+       alert("Please enter approproate value");
+     }
     var okLower = confirm("Should your password include lowercase letters?");
     var okUpper = confirm("Should your password include uppercase letetrs?");
     var okNumber = confirm("Should your password include numbers?");
